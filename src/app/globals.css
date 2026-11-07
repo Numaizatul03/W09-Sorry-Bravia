@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-jakarta: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-jetbrains: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+::selection {
+  background-color: #DCF3EA;
+  color: #065F43;
+}
+
+::-moz-selection {
+  background-color: #DCF3EA;
+  color: #065F43;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #363C47;
+  font-family: var(--font-jakarta);
+  font-size: 17px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fluid headline typography */
+.headline-display {
+  font-family: var(--font-jakarta);
+  font-size: clamp(36px, 5.5vw, 60px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.headline-lg {
+  font-family: var(--font-jakarta);
+  font-size: clamp(31px, 4vw, 47px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.headline-md {
+  font-family: var(--font-jakarta);
+  font-size: clamp(23px, 2.5vw, 29px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.stat-number {
+  font-family: var(--font-jakarta);
+  font-size: clamp(44px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.lead-paragraph {
+  font-size: clamp(17.5px, 2vw, 20px);
+  line-height: 1.72;
+  color: #5B6472;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+.body-paragraph {
+  font-size: 17px;
+  line-height: 1.72;
+  color: #363C47;
+  text-wrap: pretty;
+}
+
+.label-mono-sm {
+  font-family: var(--font-jetbrains);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.label-mono-md {
+  font-family: var(--font-jetbrains);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Accessible focus ring */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #087A58;
+  outline-offset: 3px;
+}
+
+/* Scanline texture for headline card */
+.scanline-pattern {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print styles for checklist */
+@media print {
+  header, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    color: #000 !important;
+    background: #fff !important;
+    font-size: 12pt !important;
+  }
+  .print-page {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+}
